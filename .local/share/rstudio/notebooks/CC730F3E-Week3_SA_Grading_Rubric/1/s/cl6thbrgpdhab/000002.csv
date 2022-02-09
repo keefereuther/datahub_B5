@@ -1,0 +1,107 @@
+"0","install.packages(""ggplot2"")"
+"2","Installing package into ‘/home/kdreuther/R/x86_64-conda-linux-gnu-library/4.1’
+(as ‘lib’ is unspecified)
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/ggplot2_3.3.5.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 3063309 bytes (2.9 MB)
+"
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","
+"
+"2","downloaded 2.9 MB
+
+"
+"2","* installing *source* package ‘ggplot2’ ...
+"
+"2","** package ‘ggplot2’ successfully unpacked and MD5 sums checked
+"
+"2","** using staged installation
+"
+"2","** R
+"
+"2","** data
+"
+"2","*** moving datasets to lazyload DB
+"
+"2","** inst
+"
+"2","** byte-compile and prepare package for lazy loading
+"
+"2","** help
+"
+"2","*** installing help indices
+"
+"2","*** copying figures
+"
+"2","** building package indices
+"
+"2","** installing vignettes
+"
+"2","** testing if installed package can be loaded from temporary location
+"
+"2","** testing if installed package can be loaded from final location
+"
+"2","** testing if installed package keeps a record of temporary installation path
+"
+"2","* DONE (ggplot2)
+"
+"2","
+"
+"2",""
+"2","The downloaded source packages are in
+	‘/tmp/RtmpOLtQQl/downloaded_packages’"
+"2",""
+"2","
+"
+"0","library(ggplot2)"

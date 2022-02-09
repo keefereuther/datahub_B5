@@ -1,0 +1,8 @@
+"0","BadTable<-read_csv(file= ""City,2014,2019"
+"0","                        San Antonio,1436697,1547253"
+"0","                        Houston,2239558,2320268"
+"0","                        Austin,912791,978908"")"
+"0",""
+"0","GoodTable<-pivot_longer(BadTable,cols = 2:3,names_to = ""Year"",values_to = ""Population"")"
+"0",""
+"0","head(GoodTable)"

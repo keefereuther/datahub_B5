@@ -1,0 +1,108 @@
+---
+title: "Section Assignment 2"
+author: "Your Name Here"
+date: "Today's Date"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+This week, your assignment is to begin manipulating data in R. You will also learn how to import data from .CSV files. Each week during these section times, you will work in pairs or small groups to complete the tasks. 
+
+
+First, be sure the author line above (line 3) contains your full name 
+
+  (for example, my line 3 reads: 'author: "Liam Mueller" ') 
+  
+Second, change the date in line 4 to today's date
+  
+  (for example, my line 4 reads: 'date: "01/06/2022" ') 
+
+Third, be sure not to change anything other than your name in the author line and the date in the date line (lines 3 & 4) in lines 1-12 as it will change how the file knits and is saved. 
+
+Answer the following questions by typing the appropriate code in the code boxes (denoted by ``` signs). In all boxes when necessary, I have included the name of the object you need to create and the code to display that object. Please leave that code intact for this week.
+
+
+\newpage
+
+Questions:
+
+1. (1 point) Assign to a vector called X the values 1,3,5,6,7, and 9. Assign to a vector called Y the values 2,7,4,5,2 and 12.
+
+```{r}
+X<- c(1,3,5,6,7,9)
+X
+Y<- 
+Y
+```
+\newpage
+
+2. (1 point) Concatenate (combine) the two vectors together as one larger (length of 12) vector called Z.
+```{r}
+Z <- 
+  
+Z  
+```
+\newpage
+
+3. (1 point) Create a new vector that includes all the values in Z that are less than 6.
+```{r}
+newZ<- 
+newZ
+```
+\newpage
+
+4. (1 point) Using R functions, calculate the mean of Z.
+```{r}
+meanZ<- 
+meanZ
+```
+\newpage
+
+5. (1 point) Using R functions, calculate the length of X.
+```{r}
+lengthX<- 
+lengthX
+```
+\newpage
+
+6. (1 point) Read in the .csv provided with this assignment and save it as an object.
+```{r}
+DataWeek2<-
+head(DataWeek2)
+```
+\newpage
+
+7. (1 point) Calculate the survival rate of each of these Hospitals. Save this vector as an object, you will need it in flowing questions.
+```{r}
+SurvivalRate<-
+SurvivalRate
+
+```
+\newpage
+
+8. (1 point) Add the information you calculated in question 7 as a new column to the right of your data table.
+```{r}
+DataWeek2new<-
+head(DataWeek2new)
+```
+
+
+
+\newpage
+
+9.(1 point) Save this new data table that you created in question 9 as a .csv file.
+```{r}
+
+```
+\newpage
+
+10. (1 point) Double check that your name and date are correct, then check your work. Finally click the Knit button above(It looks like a blue ball of yarn). Save the file with your name and the week number in the file name 
+
+  (for example: "Liam_Mueller_SA2").  
+  
+Then Upload the pdf file to Canvas under Week 2 Section Assignment before the deadline.

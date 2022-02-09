@@ -1,0 +1,71 @@
+---
+title: "Cool R programming"
+author: "Keefe Reuther"
+date: "12/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+library(rmarkdown)
+```
+
+------------------------------------------------------------------------
+
+### You can take complicated data
+
+```{r}
+mpg
+```
+
+------------------------------------------------------------------------
+
+### and visualize it cleanly
+
+```{r}
+p <- mpg %>%
+  ggplot( aes(x=class, y=hwy, fill=class)) +
+  geom_violin() +
+  theme(legend.position="none")
+
+p
+```
+
+------------------------------------------------------------------------
+
+### You can also quickly test hypotheses.
+
+##### How random is the random number generator in Excel?
+
+##### In Excel, I used the function "=randbetween(0,1)" in 10,000 cells and added it as a .csv file to my Jupyter Notebook.
+
+```{r}
+excel_rand <- read_csv("excel_rand.csv")
+excel_rand
+```
+
+------------------------------------------------------------------------
+
+### We expect \~50% of values to be 1. Let's test it!
+
+```{r}
+table(excel_rand)
+
+binom.test(5028, 10000)$p.value
+```
+
+------------------------------------------------------------------------
+
+### But in stat there are often different paths to asking the same question.
+
+```{r}
+x2 <- c(5028, 4972)
+
+chisq.test(x2)
+
+chisq.test(x2, simulate.p.value = TRUE, B = 10000)
+```
+
+### *So do you think the generator is **NOT** random based on this data?*

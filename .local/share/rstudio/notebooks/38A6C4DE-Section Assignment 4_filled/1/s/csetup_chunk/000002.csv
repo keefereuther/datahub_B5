@@ -1,0 +1,4 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","knitr::opts_chunk$set(eval = TRUE)"
+"0","knitr::opts_chunk$set(error = TRUE)"
+"0","knitr::opts_chunk$set(tidy = TRUE)"

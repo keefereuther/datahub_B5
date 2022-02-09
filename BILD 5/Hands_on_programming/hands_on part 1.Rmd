@@ -1,0 +1,147 @@
+---
+title: "Hands on Programming"
+author: "Keefe Reuther"
+date: "10/26/2021"
+output:
+  html_document:
+    theme:
+      bootswatch: readable
+    toc: TRUE
+    toc_depth: "5"
+    dev: "png"
+    code_folding: "hide"
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+## Hands On Programming 
+
+### by Garrett Grolemund
+ <https://rstudio-education.github.io/hopr/>
+
+### Introduction
+Busses are very easy to use, you just need to know which bus to get on, where to get on, and where to get off (and you need to pay your fare). Cars, on the other hand, require much more work: you need to have some type of map or directions (even if the map is in your head), you need to put gas in every now and then, you need to know the rules of the road (have some type of drivers license). The big advantage of the car is that it can take you a bunch of places that the bus does not go and it is quicker for some trips that would require transferring between busses. Using this analogy, programs like SPSS are busses, easy to use for the standard things, but very frustrating if you want to do something that is not already preprogrammed. R is a 4-wheel drive SUV (though environmentally friendly) with a bike on the back, a kayak on top, good walking and running shoes in the passenger seat, and mountain climbing and spelunking gear in the back. R can take you anywhere you want to go if you take time to learn how to use the equipment, but that is going to take longer than learning where the bus stops are in SPSS. - Greg Snow
+
+### Project 1
+
+You will learn to:
+    
+- Run R commands
+- Create R objects
+- Write your own R functions and scripts
+- Load and use R packages
+- Generate random samples
+- Create quick plots
+- Get help when you need it
+
+```{r}
+1+1
+100:130
+5 - 
+  +1
+
+237+2
+239*3
+717-6
+711/3
+1:6
+a <- 1
+a
+a*3
+a^0
+round(3.14, digits=1)
+factorial(7)
+```
+
+### Including Plots
+
+
+
+```{r}
+die <- 1:6
+die
+ls()
+die - 1
+die / 2
+die * die
+die %*% die
+die %o% die
+mean(die)
+sample(die, 10, replace = TRUE)
+args(sample)
+dice <-  sample(die, 10, replace = TRUE)
+dice
+sum(dice)
+```
+
+
+### Making your own functions
+
+```{r}
+my_function <- function() {
+  die <- 1:6
+  dice <- sample(die, size = 2, replace = TRUE)
+  sum(dice)
+}
+my_function()
+my_function()
+roll <- my_function()
+roll
+roll
+roll
+my_function()
+roll2 <- function(bones) {
+  dice <- sample(bones, size = 2, replace = TRUE)
+  sum(dice)
+}
+roll2(bones = 1:100)
+
+roll2 <- function(bones = 1:6) {
+  dice <- sample(bones, size = 2, replace = TRUE)
+  sum(dice)
+}
+roll2
+roll2()
+```
+
+### Making plots and getting packages
+
+
+```{r}
+library("ggplot2")
+x <- c(1, 2, 3.4, -0.8, 2, -3, 3, 4, 6, 8)
+y <- x^2
+qplot(x, y)
+x <- c(1, 2, 2, 2, 3, 3)
+qplot(x, binwidth = 1)
+x2 <- c(1,1,1,1,1,2,2,2,2,3,3,4)
+qplot(x2, binwidth = 1)
+
+lots <- replicate(1000,my_function() )
+qplot(lots, binwidth = 0.5)
+?sample
+lots <- replicate(10000,my_function() )
+qplot(lots, binwidth = 0.5)
+```
+
+###Make your own function
+
+Create a function where the die roll is unevenly weighted to roll a six 50% of the time.
+
+```{r}
+my_function
+unfair_dice <- function() {
+  die <- 1:6
+  unfair <- sample(die, size = 1, replace = TRUE, prob = c(1,1,1,1,1,5))
+}
+unfairresult <- replicate(10000, unfair_dice())
+qplot(unfairresult, binwidth = 0.5)
+
+```
+
+This is the end of part 1 of _Hands on Programming_

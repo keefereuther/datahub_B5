@@ -1,0 +1,138 @@
+---
+title: "Place your question here"
+author: "Your Name Here"
+date: "Today's Date"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+```{r instructions1, include=FALSE}
+#All instructions for this assignment will be included in this document as annotations in code chunks that will not appear in the knitted document. The hope is that the instructions will be connected to this one file, but the final knitted project will look clean and professional.
+
+#Do not include anything new or make any edits to chunks labelled "{r instructions, include=FALSE}"
+```
+
+```{r instructions2, include=FALSE}
+#1 - Create a new directory/folder in your Jupyter Notebook called "Term Project" and save this .rmd file inside.
+
+#2 - Change lines 2, 3, and 4 as appropriate. You won't know your question until you complete this checkpoint assignment.
+
+#3 - Complete the Week 4 Discussion Board Prompt - hopefully it will inspire you!
+
+#4 - Watch the instructional video outlining the scope of this project. It is linked on Canvas.
+
+#5 - Fill out the answers on the next page. Your answers should replace the [Your answer here]
+
+#6 - sub-field of biology = choose one from https://en.wikipedia.org/wiki/Outline_of_biology
+
+#7 - Topic = this should be a relevent and specific topic that has generated significant focus in the primary literature in the last 2 years (maybe even in the news!)
+
+#8 Why this topic is relevant and/or interesting = write an answer in your own words that is 250-500 words in length.
+
+```
+
+\newpage
+
+### Sub-Field of Biology:
+
+[Your answer here]
+
+### Topic:
+
+[Your answer here]
+
+### Why this topic is relevant/interesting:
+
+[Your answer here]
+
+\newpage
+
+```{r instructions3, include=FALSE}
+#9a - Find one review article or meta analysis that covers at least some significant aspects of this topic. Includes the title, a copy of the abstract/summary, a URL, and APA-formatted citation.
+
+#9b - do the same for a relevant original research paper that addressed some aspect of this topic.
+
+```
+
+### Title of a relevant review article:
+
+[Your answer here]
+
+### Article URL:
+
+[Your answer here]
+
+### Abstract:
+
+[Your answer here]
+
+### Citation:
+
+[Your answer here]
+
+### Title of a relevant original research article:
+
+[Your answer here]
+
+### Article URL:
+
+[Your answer here]
+
+### Abstract:
+
+[Your answer here]
+
+### Citation:
+
+[Your answer here]
+
+\newpage
+
+```{r instructions4, include=FALSE}
+#10 - Write down the specific question that you will eventually attempt to answer by designing an experiment and analyzing simulated data. Also copy your title and paste it in line 2 as the title of this R Markdown file.
+
+#11 - The biological and statistical hypotheses. Go back to class notes where we discuss this distinction. Below is an example adapted from Ruxton & Colegrave:
+
+#Question: Why do males have higher parasite loads than females?
+
+#Biological hypothesis: The stress associated with competition for mates reduces males' ability to mount defences against parasites.
+
+#Prediction: Parasite loads are positively correlated with levels of circulating cortisol (a stress hormone), and males show higher levels of these hormones than females.
+
+#Null hypothesis: There is no correlation between parasite load and cortisol concentration.
+
+#How about multiple hypotheses? Yes - you can test a few. But KEEP IT SIMPLE! In the example above you could test the null for males, females, and all individuals separately.
+
+```
+
+### The Question:
+
+[Your answer here]
+
+### The Biological Hypothesis:
+
+[Your answer here]
+
+### The Biological Prediction:
+
+[Your answer here]
+
+### A Statistical Alternative Hypothesis:
+
+[Your answer here]
+
+### A Statistical Null Hypothesis:
+
+[Your answer here]
+
+```{r instructions5, include=FALSE}
+#12 - When you are done, please knit the file as a pdf and upload to Canvas - NOT GRADESCOPE
+
+```
+
+\newpage

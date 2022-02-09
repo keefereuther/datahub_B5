@@ -1,0 +1,5 @@
+"0","fig2<- ggplot(data = HospitalData , aes(x= Hospital,y =Operations))+"
+"0","  geom_bar(stat=""identity"")"
+"2","Error in ggplot(data = HospitalData, aes(x = Hospital, y = Operations)) : 
+  object 'HospitalData' not found
+"

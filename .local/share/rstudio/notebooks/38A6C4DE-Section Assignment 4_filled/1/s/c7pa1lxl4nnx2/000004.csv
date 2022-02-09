@@ -1,0 +1,2 @@
+"0","OrderedGoodTable<-arrange(GoodTable,desc(Population))"
+"0","head(OrderedGoodTable)"

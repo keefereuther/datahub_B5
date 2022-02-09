@@ -1,0 +1,231 @@
+---
+title: "Hands on Programming"
+author: "Keefe Reuther"
+date: "10/26/2021"
+output:
+  html_document:
+    theme:
+      bootswatch: readable
+    toc: TRUE
+    toc_depth: "5"
+    dev: "png"
+    code_folding: "hide"
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+## Hands On Programming Part 2
+
+### by Garrett Grolemund
+ <https://rstudio-education.github.io/hopr/>
+
+Along the way, you will learn how to:
+
+- Save new types of data, like character strings and logical values
+- Save a data set as a vector, matrix, array, list, or data frame
+- Load and save your own data sets with R
+- Extract individual values from a data set
+- Change individual values within a data set
+- Write logical tests
+- Use R’s missing-value symbol, NA
+
+
+#### Tasks
+
+
+1. build the deck
+2. write functions to deal and shuffle deck
+3. change point system for game
+4. manage state of deck
+
+An atomic vector is a "c(x,.....)" . There are six basic types:
+
+1. doubles or numeric = regular numbers
+2. integers = "L" following number
+3. characters = input surrounded by "" = the individual elements are called strings
+4. logicals = TRUE and FALSE and must be in CAPS
+5. complex = complex numbers with i "imaginary"
+6. raw = straight up binary
+
+The most common attributes "metadata" to give a vector are:
+
+- names = names(object) <- c(name1, name2,...)
+- dimensions = dim(object) <- c(row#, column#)
+  - m <- matrix(die, nrow = 2) fill with vector by column. Add "byrow = TRUE" if you want to add by row.
+- class = "class()" can assign a class and "unclass()" can remove it
+  - factors is one of the most important classes and stores categorical information that can be sorted
+  
+A single vector can only have **1 data type**
+
+Many data sets contain multiple types of information. The inability of vectors, matrices, and arrays to store multiple data types seems like a major limitation. So why bother with them?
+
+In some cases, using only a single type of data is a huge advantage. Vectors, matrices, and arrays make it very easy to do math on large sets of numbers because R knows that it can manipulate each value the same way. Operations with vectors, matrices, and arrays also tend to be fast because the objects are so simple to store in memory.
+
+In other cases, allowing only a single type of data is not a disadvantage. Vectors are the most common data structure in R because they store variables very well. Each value in a variable measures the same property, so there’s no need to use different types of data.
+
+
+#### Lists
+
+
+list() creates a list the same way c() creates a vector. 
+
+Let's make a matrix of cards with 3 names = "face", "suit", "value"
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(rmarkdown)
+
+##Part 2
+
+#Making vectors and matrices
+
+time <- Sys.time()
+time
+
+cface <- c("deuce", "ace", "king", "queen", "jack", "ten", "nine", "eight", "seven", "six", "five", "four", "three")
+csuit <- c("spades", "hearts", "clubs", "diamonds")
+cvalue <- c(15:3)
+clist <- list(cface, csuit, cvalue)
+clist
+typeof(clist)
+class(clist)
+str(clist)
+```
+
+
+#### Data Frames
+
+In this I am making a basic data frame but then making a full deck using:
+
+rep() to duplicate values in a vector (default is collated, otherwise use "each=" attribute)
+
+cbind() to add vectors or lists or dataframes together
+
+
+
+```{r}
+#Data Frames
+
+df <- data.frame(face = c("ace", "two", "six"),  
+                 suit = c("clubs", "clubs", "clubs"), value = c(1, 2, 3))
+df
+
+typeof(df)
+class(df)
+str(df)
+
+allfaces <- rep(cface,4)
+allsuits <- rep(csuit, each=13)
+allvalues <- rep(cvalue, 4)
+
+deuces.d <- data.frame(face = allfaces, suit = allsuits, value = allvalues)
+
+allsuitvalue <- rep(c(4:1),each=13)
+
+deuces.deck <- cbind(deuces.d, allsuitvalue)
+deuces.deck
+```
+
+
+#### Importing in data
+
+How to load a .csv
+
+- Loading a dataset can be done from the environment window or the readr tidyverse package
+
+read_csv("path to file.csv")
+
+```{r}
+deck <- read.csv("~/BILD 5 sandbox/Hands_on_programming/deck.csv")
+
+deck[,]
+deck[1,]
+deck[-1:-50,]
+deck[1, c(TRUE, TRUE, FALSE)]
+rows <- c(TRUE, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, 
+          F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, 
+          F, F, F, F, F, F, F, F, F, F, F, F, F, F)
+deck[rows, ]
+deck[1, c("face", "suit", "value")]
+deck[ , "value"]
+```
+
+
+#### R Notation
+
+How to select values from a data frame
+
+To extract a value or set of values from a data frame, write the data frame’s name followed by a pair of hard brackets:
+
+R treats **positive integers** just like *ij* notation in linear algebra: deck[i,j] will return the value of deck that is in the ith row and the jth column
+R treats **negative integers** where it will return everything but what is listed.
+
+#### Dollar signs and double brackets
+
+To select a column from a data frame, write the data frame’s name and the column name separated by a $. Notice that no quotes should go around the column name.
+
+If the elements in your list do not have names (or you do not wish to use the names), you can use two brackets, instead of one, to subset the list. This notation will do the same thing as the $ notation.
+
+#### Modifying Values
+
+What if you need to find data points to change their values, like changing the value of the aces?
+
+Use **logical operators**
+
+| Operator | Syntax | Tests |
+|:-------|:---------|:---------|
+| > | a > b |  Is a greater than b? |
+| >= | a >= b   |  Is a greater than or equal to b?| 
+|  <  |   a < b   |  Is a less than b?| 
+|  <=   |   a <= b   |   Is a less than or equal to b?| 
+|  ==   |   a == b    |  Is a equal to b?| 
+|  !=    |  a != b   |   Is a not equal to b?| 
+|  %in%	 | a %in% c(a, b, c) | 	Is a in the group c(a, b, c)?| 
+
+```{r}
+#Exercise 6.1 (Deal a Card) Complete the following code to make a function that returns the first row of a data frame:
+
+deal <- function(cards) {
+  deck[1, c("face", "suit", "value")]}
+deal()
+
+deck2 <- deck[1:52, ]
+
+random <- sample(1:52, size = 52)
+random
+
+deck4 <- deck[random, ]
+head(deck4)
+
+#Exercise 6.2 (Shuffle a Deck) Use the preceding ideas to write a shuffle function. shuffle should take a data frame and return a shuffled copy of the data frame.
+
+shuffle <- function(cards) {
+  random <- sample(1:52, size = 52)
+  cards[random, ]
+}
+
+shuffle(cards = deck)
+shuffle(deuces.deck)
+
+deck$value
+mean(deck$value)
+median(deck$value)
+
+vec <- c(0, 0, 0, 0, 0, 0)
+vec[c(1, 3, 5)] <- c(1, 1, 1)
+vec
+
+deck2$new <- 1:52
+deck2$new <- NULL
+
+
+```
+
+
+

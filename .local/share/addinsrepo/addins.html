@@ -1,0 +1,1208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>addins</title>
+  <style type="text/css">
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="discover-and-install-useful-rstudio-addins">Discover and install useful RStudio addins</h1>
+<p><a href="https://github.com/daattali/addinslist/actions"><img src="https://github.com/daattali/addinslist/workflows/R-CMD-check/badge.svg" alt="R Build Status" /></a> <a href="https://cran.r-project.org/package=addinslist"><img src="https://www.r-pkg.org/badges/version/addinslist" alt="CRAN version" /></a></p>
+<blockquote>
+<p>Created by <a href="https://deanattali.com">Dean Attali</a></p>
+</blockquote>
+<p><a href="https://rstudio.github.io/rstudioaddins/">RStudio addins</a> were released in early 2016 to provide anyone with the ability to add “extensions” to RStudio. This feature has quickly become popular, but discoverability was a problem: <strong>there’s just no easy way to know what addins exist.</strong></p>
+<p>The <code>addinslist</code> package solves that problem in two ways:</p>
+<ul>
+<li><p>This package provides a continuously updated list of RStudio addins that you can browse through (<a href="#addinslist-table">below</a>).</p></li>
+<li><p>After installing this package (<code>install.packages('addinslist')</code>), your RStudio will get populated with a new addin called “Browse RStudio addins”. This addin allows you to interactively browse through the list of addins, see which ones you already have installed, and let you install/uninstall the corresponding package of each addin. The following image shows how to access this “addin of addins” in RStudio.</p></li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/daattali/addinslist/master/inst/media/addins-menu.png" alt="" />
+<p class="caption">Addins menu</p>
+</div>
+<hr />
+<p><strong>Need Shiny help? <a href="https://attalitech.com/">I’m available for consulting</a>.</strong><br/> <strong>If you find {addinslist} useful, please consider <a href="https://github.com/sponsors/daattali">supporting my work</a> to unlock rewards! ❤</strong></p>
+<p align="center">
+<p><a style="display: inline-block;" href="https://github.com/sponsors/daattali"> <img height="35" src="https://i.imgur.com/034B8vq.png" /> </a></p>
+<p><a style="display: inline-block;" href="https://paypal.me/daattali"> <img height="35" src="https://camo.githubusercontent.com/0e9e5cac101f7093336b4589c380ab5dcfdcbab0/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f74776f6c66736f6e2f70617970616c2d6769746875622d627574746f6e40312e302e302f646973742f627574746f6e2e737667" /> </a></p>
+</p>
+<h2 id="sponsors">
+Sponsors 🏆
+</h2>
+<blockquote>
+<p>There are no sponsors yet</p>
+</blockquote>
+<p><a href="https://github.com/sponsors/daattali/sponsorships?tier_id=39856">Become the first sponsor for {addinslist} and unlock special rewards!</a></p>
+<h2 id="addinslist-table">
+List of addins
+</h2>
+<p>If you made a useful RStudio addin, feel free to make a pull request <a href="https://github.com/daattali/addinslist#readme">on GitHub</a> to add it to the list.</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Date Added</th>
+<th>Description</th>
+<th>Package</th>
+<th>On CRAN?</th>
+<th>Author</th>
+<th>More links</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Add Crossref Citations</td>
+<td>2016-07-25</td>
+<td>Add a new bibliography entry through Crossref DOI</td>
+<td><a href="https://github.com/ropensci/rcrossref">rcrossref</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/haozhu233">Hao Zhu</a></td>
+<td><a href="https://pbs.twimg.com/media/CoOo82NUEAAxHUF.jpg:large">Screenshoot</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Add GIFs</td>
+<td>2016-08-10</td>
+<td>Search GIFs through Giphy API and use them in Rmarkdown documents</td>
+<td><a href="https://github.com/haozhu233/giphyr">giphyr</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/haozhu233">Hao Zhu</a></td>
+<td><a href="https://raw.githubusercontent.com/haozhu233/giphyr/master/img/Screenshot.png">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Addin Manager</td>
+<td>2016-04-01</td>
+<td>Install and remove addins</td>
+<td><a href="https://github.com/csgillespie/addinmanager">addinmanager</a></td>
+<td>:x:</td>
+<td>Colin Gillespie</td>
+<td><a href="https://csgillespie.wordpress.com/2016/04/01/rstudio-addins-manager/">Blog post</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>addinit</td>
+<td>2018-06-06</td>
+<td>Initialize an ‘RStudio’ Project</td>
+<td><a href="https://github.com/dreamRs/addinit">addinit</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dreamRs">dreamRs</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Align Assign</td>
+<td>2016-10-03</td>
+<td>Align the assignment operators within a highlighted area</td>
+<td><a href="https://github.com/seasmith/AlignAssign">AlignAssign</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/seasmith">Luke Smith</a></td>
+<td><a href="https://raw.githubusercontent.com/seasmith/AlignAssign/master/inst/media/demo.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ARIMA Picker</td>
+<td>2016-04-25</td>
+<td>Interactively pick ARIMA parameters</td>
+<td><a href="https://github.com/YvesCR/arimaUI">arimaUI</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/YvesCR">Yves crutain</a></td>
+<td><a href="http://data-laborer.eu/statistic/ARIMA_Picker">Blog post</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>asis chunk</td>
+<td>2019-08-12</td>
+<td>Insert code chunk calling asis engine</td>
+<td><a href="https://github.com/enricomanlapig/asischunk">asischunk</a></td>
+<td>:x:</td>
+<td><a href="https://emanlapig.net/">Enrico Manlapig</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Assign default values</td>
+<td>2016-03-30</td>
+<td>Set function arguments in selection to their default values</td>
+<td><a href="https://github.com/jennybc/jadd">jadd</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/jennybc">Jenny Bryan</a></td>
+<td><a href="https://raw.githubusercontent.com/jennybc/jadd/master/internal/assign_defaults.gif">Demo GIF</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>assignparams</td>
+<td>2016-06-29</td>
+<td>Evaluate function parameter in global environment</td>
+<td><a href="https://github.com/petermeissner/assignparams">assignparams</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/petermeissner">Peter Meissner</a></td>
+<td><a href="https://raw.githubusercontent.com/petermeissner/assignparams/master/extra/assign_params.gif">DemoVideo</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>beautifyR</td>
+<td>2018-04-21</td>
+<td>Format RMarkdown tables beautifully</td>
+<td><a href="https://github.com/mwip/beautifyR">beautifyR</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/mwip/">Matthias Weigand</a></td>
+<td><a href="https://github.com/mwip/beautifyR#beautifyr-in-action">Demo GIF</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Browse RStudio addins</td>
+<td>2016-03-30</td>
+<td>Browse and install RStudio addins</td>
+<td><a href="https://github.com/daattali/addinslist">addinslist</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://deanattali.com/">Dean Attali</a></td>
+<td><a href="https://raw.githubusercontent.com/daattali/addinslist/master/inst/media/addin.png">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Build bounding boxes</td>
+<td>2021-01-21</td>
+<td>Draw spatial bounding boxes in a <code>leaflet</code> interface</td>
+<td><a href="https://github.com/baslat/bbb">bbb</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/baslat">Abasi Latcham</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Case converter</td>
+<td>2018-09-20</td>
+<td>Convert text cases to lower, upper, snake, camel cases</td>
+<td><a href="https://github.com/strboul/caseconverter">caseconverter</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/strboul">strboul</a></td>
+<td><a href="https://raw.githubusercontent.com/strboul/caseconverter/master/inst/media/caseconverter.gif">Demo GIF</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Colour picker</td>
+<td>2016-03-30</td>
+<td>Lets you easily select colours</td>
+<td><a href="https://github.com/daattali/colourpicker">colourpicker</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://deanattali.com/">Dean Attali</a></td>
+<td><a href="https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourpickerscrnshot.png">Screenshot</a>, <a href="https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/colourPickerGadget.gif">Demo video</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>compareAreas</td>
+<td>2018-11-26</td>
+<td>Compare areas across square meters, kilometers, feet, miles, and acres</td>
+<td><a href="https://github.com/daranzolin/compareAreas">compareAreas</a></td>
+<td>:x:</td>
+<td><a href="https://daranzolin.github.io/">David Ranzolin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>compareWith</td>
+<td>2019-08-28</td>
+<td>Enhanced diff and merge tools for RStudio</td>
+<td><a href="https://github.com/miraisolutions/compareWith#readme">compareWith</a></td>
+<td>:x:</td>
+<td><a href="https://mirai-solutions.ch">Mirai Solutions</a></td>
+<td><a href="https://mirai-solutions.ch/news/2019/07/04/compareWith">Blog post</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Convert slash</td>
+<td>2016-05-10</td>
+<td>Reverse slashes (eg in file paths)</td>
+<td><a href="https://github.com/sfr/RStudio-Addin-Snippets">snippetsaddin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/sfr">Juraj Sofranko</a></td>
+<td></td>
+<td>Clipboard is Windows only</td>
+</tr>
+<tr class="even">
+<td>Convert Variable type</td>
+<td>2016-08-05</td>
+<td>Convert variables’ type into either factor, character or numeric in a data frame</td>
+<td><a href="https://github.com/sarupurisailalith/commonUtilAddins">commonUtilAddins</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/sarupurisailalith">sarupurisailalith</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Copy Frame to Clipboard</td>
+<td>2016-03-30</td>
+<td>Copy a <code>data.frame</code> to the clipboard</td>
+<td><a href="https://github.com/BAAQMD/copydat">copydat</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/BAAQMD">Bay Area Air Quality Management District</a></td>
+<td></td>
+<td>Doesn’t work on Windows</td>
+</tr>
+<tr class="even">
+<td>Copy value</td>
+<td>2016-05-10</td>
+<td>Copy data to clipboard (arrays, data frames, matrices, tables, vectors)</td>
+<td><a href="https://github.com/sfr/RStudio-Addin-Snippets">snippetsaddin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/sfr">Juraj Sofranko</a></td>
+<td></td>
+<td>Windows only</td>
+</tr>
+<tr class="odd">
+<td>CRANsearcher</td>
+<td>2017-09-17</td>
+<td>RStudio addin to search CRAN packages titles and descriptions</td>
+<td><a href="https://github.com/RhoInc/CRANsearcher">CRANsearcher</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/RhoInc">Rho Inc</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>datapasta</td>
+<td>2016-09-28</td>
+<td>Keyboard shortcuts for pasting clipboard data as nicely formatted R vectors/tibbles.</td>
+<td><a href="https://github.com/MilesMcBain/datapasta">datapasta</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/milesmcbain">Miles McBain</a></td>
+<td><a href="https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif">Demo Gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>datasets.load</td>
+<td>2016-12-15</td>
+<td>Loading datasets from all installed packages</td>
+<td><a href="https://github.com/bquast/datasets.load">datasets.load</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://qua.st/">Bastiaan Quast</a></td>
+<td><a href="https://github.com/bquast/datasets.load">Demo Gif</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Document This</td>
+<td>2016-03-30</td>
+<td>Auto-generate Roxygen skeletons for functions and data</td>
+<td><a href="https://github.com/mdlincoln/docthis">docthis</a></td>
+<td>:x:</td>
+<td><a href="http://matthewlincoln.net/">Matthew Lincoln</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Enhanced View</td>
+<td>2018-07-12</td>
+<td>Enhanced data viewer, allows column selection and filtering</td>
+<td><a href="https://github.com/kieranjmartin/viewenhance">viewenhance</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/kieranjmartin">Kieran Martin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ermoji</td>
+<td>2018-04-24</td>
+<td>Search and Copy Emoji</td>
+<td><a href="https://github.com/gadenbuie/ermoji">ermoji</a></td>
+<td>:x:</td>
+<td><a href="https://www.garrickadenbuie.com">Garrick Aden-Buie</a></td>
+<td><a href="https://github.com/gadenbuie/ermoji/#usage">Screenshots</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Escape strings</td>
+<td>2018-09-17</td>
+<td>Convert non-ASCII strings to a portable format</td>
+<td><a href="https://github.com/mvkorpel/uniscape">uniscape</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/mvkorpel">Mikko Korpela</a></td>
+<td><a href="https://raw.githubusercontent.com/mvkorpel/uniscape/master/media/escape_strings.png">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>esquisse</td>
+<td>2018-06-06</td>
+<td>Make plots with ggplot2</td>
+<td><a href="https://github.com/dreamRs/esquisse">esquisse</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/dreamRs">dreamRs</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Explode a call with <code>boom()</code></td>
+<td>2021-04-15</td>
+<td>Print the Output of Intermediate Steps of a Call</td>
+<td><a href="https://github.com/moodymudskipper/boomer">boomer</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/moodymudskipper">Antoine Fabri</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>extraInserts</td>
+<td>2017-12-26</td>
+<td>Insert various (pipe) operators</td>
+<td><a href="https://github.com/konradedgar/extraInserts">extraInserts</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/konradzdeb">Konrad Zdeb</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>get_fn_args</td>
+<td>2018-07-12</td>
+<td>Reads highlighted default values into console, translating commas to semi colons</td>
+<td><a href="https://github.com/kieranjmartin/getfunctionargs">getfunctionargs</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/kieranjmartin">Kieran Martin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ggedit</td>
+<td>2017-05-04</td>
+<td>Reproducible layer, scale and theme editing for ggplot2</td>
+<td><a href="https://github.com/metrumresearchgroup/ggedit">ggedit</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://yonicd.netlify.com/">Jonathan Sidi</a></td>
+<td><a href="https://www.youtube.com/watch?v=693XhHt8fug">Youtube Clip</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ggplot Theme Assist</td>
+<td>2016-03-30</td>
+<td>Customize your ggplot theme</td>
+<td><a href="https://github.com/calligross/ggthemeassist">ggThemeAssist</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/calligross">Calli Gross</a></td>
+<td><a href="https://raw.githubusercontent.com/calligross/ggthemeassist/master/examples/ggThemeAssist2.gif">Demo GIF</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ggplot2 Marginal Plots</td>
+<td>2016-03-30</td>
+<td>Add marginal plots to ggplot2</td>
+<td><a href="https://github.com/daattali/ggExtra">ggExtra</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://deanattali.com/">Dean Attali</a></td>
+<td><a href="https://raw.githubusercontent.com/daattali/ggExtra/master/inst/img/ggmarginal-gadget.png">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>gitgadget</td>
+<td>2016-09-16</td>
+<td>Version Control and Assignment Management using Git</td>
+<td><a href="https://github.com/vnijs/gitgadget">gitgadget</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/vnijs">Vincent Nijs</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Google API Auth</td>
+<td>2016-05-03</td>
+<td>Authenticate with Google APIs</td>
+<td><a href="https://github.com/MarkEdmondson1234/googleAuthR">googleAuthR</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/MarkEdmondson1234">Mark Edmondson</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Gotta Read ’Em All</td>
+<td>2016-05-10</td>
+<td>RStudio Add-In to interactively read ALL the data into R</td>
+<td><a href="https://github.com/Stan125/GREA">GREA</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/Stan125">Stanislaus Stadlmann</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Hist Add-In</td>
+<td>2016-03-31</td>
+<td>Interactively create histograms with ggplot2 and obtain the R Code</td>
+<td><a href="https://github.com/Stan125/limoaddin">limoaddin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/Stan125">Stanislaus Stadlmann</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>imageclipr</td>
+<td>2016-04-06</td>
+<td>Copy and paste images from clipboard to Rmarkdown .Rmd files</td>
+<td><a href="https://github.com/Timag/imageclipr">imageclipr</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/Timag/">Tonio Liebrand</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Input LaTeX Math</td>
+<td>2016-04-25</td>
+<td>Input math expressions via the MathQuill library</td>
+<td><a href="https://github.com/rstudio/bookdown">bookdown</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/rstudio/">RStudio</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Insert %&gt;%</td>
+<td>2016-05-10</td>
+<td>Insert pipe + reformat surrounding</td>
+<td><a href="https://github.com/sfr/RStudio-Addin-Snippets">snippetsaddin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/sfr">Juraj Sofranko</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Insert citations</td>
+<td>2016-06-28</td>
+<td>Search a BibTeX-file and insert formatted Markdown citations</td>
+<td><a href="https://github.com/crsh/citr">citr</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/crsh/">Frederik Aust</a></td>
+<td><a href="https://raw.githubusercontent.com/crsh/citr/master/tools/images/addin_demo.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Insert IPA symbols</td>
+<td>2018-10-17</td>
+<td>Insert IPA phonetic symbols in R Markdown by searching their phonetic features in a shiny gadget</td>
+<td><a href="https://github.com/liao961120/linguisticsdown">linguisticsdown</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://liao961120.github.io">Yongfu Liao</a></td>
+<td><a href="https://liao961120.github.io/linguisticsdown/">Pkg Website</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>insertImage</td>
+<td>2017-03-02</td>
+<td>Insert image into R Markdown with file chooser. Copy image file to project.</td>
+<td><a href="https://github.com/LudvigOlsen/insertImage">insertImage</a></td>
+<td>:x:</td>
+<td><a href="http://ludvigolsen.dk/?lang=en">Ludvig R Olsen</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>inserttable</td>
+<td>2018-04-07</td>
+<td>RStudio add-in facilitating insertion of nicely formatted tables in R markdown documents or plain R scripts.</td>
+<td><a href="https://github.com/lbusett/insert_table">inserttable</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/lbusett/">Lorenzo Busetto</a></td>
+<td><a href="https://lbusett.netlify.com/post/a-new-rstudio-addin-to-facilitate-inserting-tables-in-rmarkdown-documents/">Blog Post</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>jagsAddIn</td>
+<td>2020-02-11</td>
+<td>RStudio add-in to create template code for running jags from R.</td>
+<td><a href="https://github.com/n8thangreen/jagsAddIn">jagsAddIn</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/n8thangreen/">Nathan Green</a></td>
+<td><a href="https://github.com/n8thangreen/jagsAddIn/blob/master/docs/example.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Keyboard shortcuts for str,plot etc</td>
+<td>2019-06-18</td>
+<td>Examine selected objects; open function source code on github</td>
+<td><a href="https://github.com/brry/rskey#rskey">rskey</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://brry.github.io">Berry Boessenkool</a></td>
+<td></td>
+<td>Can set keyboard shortcuts on disc with rskey::setKeyboardBindings()</td>
+</tr>
+<tr class="even">
+<td>Lattice Plotting</td>
+<td>2016-03-30</td>
+<td>Interactively build plots using the <code>lattice</code> system</td>
+<td><a href="https://github.com/homerhanumat/addinplots/">addinplots</a></td>
+<td>:x:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Levels ordering</td>
+<td>2016-04-06</td>
+<td>Interactively generate code to reorder factor levels</td>
+<td><a href="https://github.com/juba/questionr">questionr</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/juba/">Julien Barnier</a></td>
+<td><a href="https://video.twimg.com/ext_tw_video/709748628911484928/pu/vid/874x720/ufNktJLtpIdP2fem.mp4">Demo video</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Levels recoding</td>
+<td>2016-04-06</td>
+<td>Interactively generate code to edit factor levels</td>
+<td><a href="https://github.com/juba/questionr">questionr</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/juba/">Julien Barnier</a></td>
+<td><a href="https://video.twimg.com/ext_tw_video/709748109992185856/pu/vid/874x720/bLPgibM_9K_2pRHa.mp4">Demo video</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>littleboxes</td>
+<td>2016-06-09</td>
+<td>Easily add a boxed title in R scripts</td>
+<td><a href="https://github.com/ThinkRstat/littleboxes">littleboxes</a></td>
+<td>:x:</td>
+<td><a href="http://thinkr.fr">thinkr</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>makeOxygen</td>
+<td>2017-04-12</td>
+<td>Self-populating roxygen2 skeletons</td>
+<td><a href="https://github.com/metrumresearchgroup/sinew">sinew</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://yonicd.netlify.com/">Jonathan Sidi</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mapedit.addin</td>
+<td>2018-12-15</td>
+<td>Create and save spatial data in GUI</td>
+<td><a href="https://github.com/mrjoh3/mapedit.addin">mapedit.addin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/mrjoh3">Matt Johnson</a></td>
+<td></td>
+<td>saves to <code>.GlobalEnv</code> and/or disk</td>
+</tr>
+<tr class="even">
+<td>Merge data frames</td>
+<td>2016-08-05</td>
+<td>Perform Inner, left, Right and Full Joins and create a new data frame</td>
+<td><a href="https://github.com/sarupurisailalith/commonUtilAddins">commonUtilAddins</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/sarupurisailalith">sarupurisailalith</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mischelper</td>
+<td>2016-07-30</td>
+<td>microbenchmark, profvis selected code, remove unneeded hard line breaks, flip windows path separator</td>
+<td><a href="https://github.com/dracodoc/mischelper">mischelper</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dracodoc">dracodoc</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mufflr</td>
+<td>2016-08-30</td>
+<td>Keyboard shortcuts for quieter and speedier pipelines</td>
+<td><a href="https://github.com/MilesMcBain/mufflr">mufflr</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/milesmcbain">Miles McBain</a></td>
+<td><a href="https://raw.githubusercontent.com/milesmcbain/mufflr/master/inst/media/mufflr.gif">Demo Gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>namebrowser</td>
+<td>2016-08-18</td>
+<td>Browse or search all installed packages for function names, insert library(pkg) or pkg:: prefix</td>
+<td><a href="https://github.com/dracodoc/namebrowser">namebrowser</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dracodoc">dracodoc</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>objectremover</td>
+<td>2019-08-04</td>
+<td>Remove objects from the Global environment based on text patterns and object type</td>
+<td><a href="https://github.com/alan-y/objectremover">objectremover</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/alan-y">Alan Yeung</a></td>
+<td><a href="https://raw.githubusercontent.com/alan-y/objectremover/master/inst/img/objectremover_demo.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Path To Clipboard</td>
+<td>2020-01-02</td>
+<td>Copy the active document’s absolute path to clipboard.</td>
+<td><a href="https://github.com/dcomtois/pathToClip">pathToClip</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dcomtois">Dominic Comtois</a></td>
+<td><a href="https://github.com/dcomtois/pathToClip/blob/ca9f97aa6d7ed65ee51e70ba5246e72cf904df6f/inst/media/pathToClip_demo.gif">Demo Gif</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Plot Colour Helper</td>
+<td>2016-03-30</td>
+<td>Interactively pick colours to use in your plot</td>
+<td><a href="https://github.com/daattali/colourpicker">colourpicker</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://deanattali.com/">Dean Attali</a></td>
+<td><a href="https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/plothelper-demo.png">Screenshot</a>, <a href="https://raw.githubusercontent.com/daattali/colourpicker/master/inst/img/plothelper-demo.gif">Demo video</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>prefixer</td>
+<td>2018-06-06</td>
+<td>Prefix function with their namespace</td>
+<td><a href="https://github.com/dreamRs/prefixer">prefixer</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dreamRs">dreamRs</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Preview R-markdown Book</td>
+<td>2016-04-25</td>
+<td>Run bookdown’s serve_book() to live preview a book</td>
+<td><a href="https://github.com/rstudio/bookdown">bookdown</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/rstudio/">RStudio</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>QRAGadget</td>
+<td>2016-06-28</td>
+<td>A Shiny Gadget for Interactive QRA Visualizations</td>
+<td><a href="https://github.com/paulgovan/QRAGadget">QRAGadget</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/paulgovan">Paul Govan</a></td>
+<td><a href="https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>quickview</td>
+<td>2019-04-12</td>
+<td>Quickly inspect your data in a View tab of RStudio</td>
+<td><a href="https://github.com/fkeck/quickview">quickview</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/fkeck">Francois Keck</a></td>
+<td><a href="https://raw.githubusercontent.com/fkeck/quickview/master/inst/screencast_qv.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>r6methods</td>
+<td>2020-03-16</td>
+<td>Generate methods for R6 classes</td>
+<td><a href="https://github.com/jakubsob/r6methods">r6methods</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/jakubsob">Jakub Sobolewski</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>radiant</td>
+<td>2016-06-30</td>
+<td>A Shiny interface for business analytics in R</td>
+<td><a href="https://github.com/radiant-rstats/radiant">radiant</a></td>
+<td>:x:</td>
+<td><a href="http://rady.ucsd.edu/faculty/directory/nijs">Vincent Nijs</a></td>
+<td><a href="https://radiant-rstats.github.io/docs">Documentation</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>radiant.data</td>
+<td>2016-06-30</td>
+<td>A Shiny interface to visualize, summarize, transform, and combine data</td>
+<td><a href="https://github.com/radiant-rstats/radiant.data">radiant.data</a></td>
+<td>:x:</td>
+<td><a href="http://rady.ucsd.edu/faculty/directory/nijs">Vincent Nijs</a></td>
+<td><a href="https://radiant-rstats.github.io/docs">Documentation</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>rdoxygen</td>
+<td>2017-08-14</td>
+<td>Create doxygen documentation for source code</td>
+<td><a href="https://github.com/nevrome/rdoxygen">rdoxygen</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/nevrome">Clemens Schmid</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>RegExplain</td>
+<td>2018-04-04</td>
+<td>Interactive regular expression utility belt</td>
+<td><a href="https://github.com/gadenbuie/regexplain">regexplain</a></td>
+<td>:x:</td>
+<td><a href="https://www.garrickadenbuie.com">Garrick Aden-Buie</a></td>
+<td><a href="https://github.com/gadenbuie/regexplain/#overview">Demo gifs</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>remedy</td>
+<td>2017-09-08</td>
+<td>RStudio Addins to Simplify Markdown Writing</td>
+<td><a href="https://github.com/ThinkR-open/remedy">remedy</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://thinkr.fr/">ThinkR</a></td>
+<td><a href="https://github.com/ThinkR-open/remedy/blob/master/README.md">How it works</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Render Rmd in Console</td>
+<td>2016-03-30</td>
+<td>Render an R Markdown document in the global environment</td>
+<td><a href="https://github.com/jeffjjohnston/RStudioConsoleRender">RStudioConsoleRender</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/jeffjjohnston">Jeff Johnston</a></td>
+<td><a href="https://jeffjjohnston.github.io/rstudio/rmarkdown/2016/03/01/faster-rendering-in-rstudio.html">Blog post</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Rmd or Blogdown post Image Paste</td>
+<td>2020-05-11</td>
+<td>Use ‘ctrl+v’ to paste images into a blogdown post or Rmd files</td>
+<td><a href="https://github.com/xiaoa6435/RmdImgPaste">RmdImgPaste</a></td>
+<td>:x:</td>
+<td>zhangzhenhao</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>rpivotGadget</td>
+<td>2016-04-04</td>
+<td>Add-in wrapper around the rpivotTable HTML widget</td>
+<td><a href="https://github.com/dkilfoyle/rpivotGadget">rpivotGadget</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dkilfoyle">Dean Kilfoyle</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>rsam</td>
+<td>2018-01-14</td>
+<td>Manage installed RStudio addins keyboard shortcuts and IDE dropdown list</td>
+<td><a href="https://github.com/yonicd/rsam">rsam</a></td>
+<td>:x:</td>
+<td><a href="https://yonicd.netlify.com/">Jonathan Sidi</a></td>
+<td><a href="https://www.youtube.com/watch?v=-XZWv7CJrs8">YouTube</a></td>
+<td>Writes to Disk</td>
+</tr>
+<tr class="odd">
+<td>Schedule R scripts on Linux/Unix</td>
+<td>2016-03-30</td>
+<td>Use cron to schedule your R scripts (Linux/Unix)</td>
+<td><a href="https://github.com/bnosac/cronR">cronR</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/jwijffels">jwijffels</a></td>
+<td><a href="https://raw.githubusercontent.com/bnosac/cronR/master/vignettes/cronR-rstudioaddin.png">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Schedule R scripts on Windows</td>
+<td>2016-03-30</td>
+<td>Use Windows task scheduler to schedule your R scripts (Windows)</td>
+<td><a href="https://github.com/bnosac/taskscheduleR">taskscheduleR</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/jwijffels">jwijffels</a></td>
+<td><a href="https://raw.githubusercontent.com/bnosac/taskscheduleR/master/vignettes/taskscheduleR-rstudioaddin.png">Screenshot</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>scribblr</td>
+<td>2021-06-19</td>
+<td>Open scribblr note editor for taking project-related notes in RStudio</td>
+<td><a href="https://github.com/vgherard/scribblr">scribblr</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/vgherard">Valerio Gherardi</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>SeaClass</td>
+<td>2017-08-08</td>
+<td>An interactive R GUI for classification problems</td>
+<td><a href="https://github.com/ChrisDienes/SeaClass">SeaClass</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/ChrisDienes">Chris Dienes</a></td>
+<td><a href="https://github.com/ChrisDienes/SeaClass/blob/master/screen_shots.png">Screenshots</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Search CRAN packages</td>
+<td>2019-11-26</td>
+<td>Search and explore CRAN packages</td>
+<td><a href="https://github.com/r-hub/pkgsearch">pkgsearch</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/r-hub/">R-hub</a></td>
+<td><a href="https://r-hub.github.io/pkgsearch/reference/pkg_search_addin.html">Pkg Website</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>shinyExams</td>
+<td>2018-06-27</td>
+<td>RStudio addin to create exercises</td>
+<td><a href="https://github.com/flaviobarros/shinyExams">shinyExams</a></td>
+<td>:x:</td>
+<td></td>
+<td><a href="https://github.com/flaviobarros/shinyExams#usage">Demo GIF</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ShinyQuickStarter</td>
+<td>2021-03-05</td>
+<td>Build Shiny Apps per Drag &amp; Drop</td>
+<td><a href="https://github.com/cran/ShinyQuickStarter">ShinyQuickStarter</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/lbinder357">Leon Binder</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Snake caser</td>
+<td>2016-05-06</td>
+<td>Convert a character string to snake_case</td>
+<td><a href="https://github.com/benmarwick/snakecaser">snakecaser</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/benmarwick">Ben Marwick</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>sortLines</td>
+<td>2017-03-11</td>
+<td>Sort selected lines in the editor with a number-smart algorithm.</td>
+<td><a href="https://github.com/dcomtois/sortLines">sortLines</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dcomtois">Dominic Comtois</a></td>
+<td><a href="https://raw.githubusercontent.com/dcomtois/sortLines/master/inst/media/sortLinesDemo.gif">Demo Gif</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>splitChunk</td>
+<td>2017-02-22</td>
+<td>Split code chunk in R Markdown</td>
+<td><a href="https://github.com/LudvigOlsen/splitChunk">splitChunk</a></td>
+<td>:x:</td>
+<td><a href="http://ludvigolsen.dk/?lang=en">Ludvig R Olsen</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>straddin</td>
+<td>2017-12-17</td>
+<td>Peek at objects with a keystroke.</td>
+<td><a href="https://github.com/famuvie/straddin">straddin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/famuvie">Facundo Munoz</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>strcode</td>
+<td>2016-12-02</td>
+<td>Insert code block separators and section titles</td>
+<td><a href="https://github.com/lorenzwalthert/strcode">strcode</a></td>
+<td>:x:</td>
+<td><a href="http://lorenzwalthert.github.io/">Lorenz Walthert</a></td>
+<td><a href="https://raw.githubusercontent.com/lorenzwalthert/strcode/master/demos/strcode_v0.2.0_video_to_gif2_large.gif">Demo GIF</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>styler</td>
+<td>2017-11-28</td>
+<td>RStudio Addin to provide non-invasive pretty-printing of R source code while adhering to the tidyverse formatting rules.</td>
+<td><a href="https://github.com/r-lib/styler">styler</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/r-lib">R infrastructure</a></td>
+<td><a href="https://raw.githubusercontent.com/lorenzwalthert/some_raw_data/master/styler_0.1.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>testthis</td>
+<td>2017-01-28</td>
+<td>Utility functions and Rstudio addins to make using the testthat package even more fun</td>
+<td><a href="https://github.com/s-fleck/testthis">testthis</a></td>
+<td>:white_check_mark:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Tidy Data</td>
+<td>2016-03-30</td>
+<td>Interactively build tidyr function call (gather)</td>
+<td><a href="https://github.com/MangoTheCat/tidyshiny/">tidyshiny</a></td>
+<td>:x:</td>
+<td><a href="http://www.mango-solutions.com">Mango Solutions</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>TODOr</td>
+<td>2017-11-13</td>
+<td>Finds all TODO, FIXME, CHANGED etc. comments in your project and shows them as markers.</td>
+<td><a href="https://github.com/dokato/todor">TODOr</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/dokato">Dominik Krzeminski</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>tsviz</td>
+<td>2019-07-28</td>
+<td>Easy and interactive time series visualization</td>
+<td><a href="https://github.com/xtreamsrl/tsviz">tsviz</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://xtreamers.io">xtream</a></td>
+<td><a href="https://medium.com/@donlelef/introducing-tsviz-interactive-time-series-visualization-in-r-studio-a96cde507a14">Blog post</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>typeStringsGadget</td>
+<td>2017-02-18</td>
+<td>Type strings unencumbered</td>
+<td><a href="https://github.com/daranzolin/typeStringsGadget">typeStringsGadget</a></td>
+<td>:x:</td>
+<td><a href="http://daranzolin.github.io">David Ranzolin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>unnestIfElse</td>
+<td>2021-01-28</td>
+<td>Quickly and roughly convert nested ifelse() statements to dplyr::case_when()</td>
+<td><a href="https://github.com/erictleung/unnestIfElse">unnestIfElse</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/erictleung">Eric Leung</a></td>
+<td><a href="https://github.com/erictleung/unnestIfElse/blob/master/inst/media/nested_if_else.gif">Demo Gif</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>upnews GitHub pkgs</td>
+<td>2018-11-15</td>
+<td>Display news and update outdated github R packages</td>
+<td><a href="https://github.com/ginolhac/upnews">upnews</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/ginolhac">Aurelien Ginolhac</a></td>
+<td><a href="https://raw.githubusercontent.com/ginolhac/upnews/master/docs/demo.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Variable cutting</td>
+<td>2016-04-06</td>
+<td>Interactively generate <code>cut()</code> code</td>
+<td><a href="https://github.com/juba/questionr">questionr</a></td>
+<td>:white_check_mark:</td>
+<td><a href="https://github.com/juba/">Julien Barnier</a></td>
+<td><a href="https://video.twimg.com/ext_tw_video/709749076225560576/pu/vid/874x720/jzl490qfQaJIJjWC.mp4">Demo video</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ViewPipeSteps</td>
+<td>2018-02-23</td>
+<td>Create View Tabs of Each Piped Step</td>
+<td><a href="https://github.com/daranzolin/ViewPipeSteps">ViewPipeSteps</a></td>
+<td>:x:</td>
+<td><a href="https://daranzolin.github.io/">David Ranzolin</a></td>
+<td><a href="https://media.giphy.com/media/24p7Q2DkFpy5slRhOy/giphy.gif">Demo gif</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>viewxl</td>
+<td>2018-06-06</td>
+<td>Open data.frame(s) in Excel</td>
+<td><a href="https://github.com/dreamRs/viewxl">viewxl</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/dreamRs">dreamRs</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>wellspell.addin</td>
+<td>2018-12-15</td>
+<td>Quick spellcheck with hunspell</td>
+<td><a href="https://github.com/nevrome/wellspell.addin">wellspell.addin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/nevrome">Clemens Schmid</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Word count add-in</td>
+<td>2016-05-06</td>
+<td>Count non-code words in Rmd documents</td>
+<td><a href="https://github.com/benmarwick/wordcountaddin">wordcountaddin</a></td>
+<td>:x:</td>
+<td><a href="https://github.com/benmarwick">Ben Marwick</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wrap Rmd</td>
+<td>2016-03-30</td>
+<td>Wrap selected R Markdown text but don’t insert lines breaks into inline R code</td>
+<td><a href="https://github.com/tjmahr/WrapRmd">WrapRmd</a></td>
+<td>:x:</td>
+<td><a href="http://tjmahr.com/">TJ Mahr</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

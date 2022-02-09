@@ -1,0 +1,27 @@
+MANPATH=/usr/share/man
+XDG_SESSION_ID=379929
+SHELL=/usr/bin/bash
+SSH_CLIENT=66.75.227.242 1083 22
+USER=kdreuther
+PREPUSER=TRUE
+BEGINENV=99
+MODULE_VERSION=3.2.9
+MAIL=/var/mail/kdreuther
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin
+PWD=/dsmlp/datasets/home/home-00/14/614/kdreuther
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=
+KRB5CCNAME=FILE:/tmp/krb5cc_100052614_QuJ5oM
+SHLVL=1
+HOME=/datasets/home/14/614/kdreuther
+ACMS_MODULES=/public/Modules
+LOGNAME=kdreuther
+SSH_CONNECTION=66.75.227.242 1083 128.54.65.160 22
+MODULESHOME=/usr/share/Modules
+XDG_RUNTIME_DIR=/run/user/100052614
+MODULESBEGINENV=/datasets/home/14/614/kdreuther/.modulesbegenv
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=/usr/bin/modulecmd
+MODULEPATH=/public/modulefiles:/public/Modules/acms-modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles
+MODULEPATH=/public/modulefiles:/public/Modules/acms-modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles

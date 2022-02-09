@@ -1,0 +1,36 @@
+---
+title: "Modern Dive"
+author: "Keefe Reuther"
+date: "11/04/2021"
+output:
+  html_document:
+    theme:
+      bootswatch: readable
+    toc: TRUE
+    toc_depth: "5"
+    dev: "png"
+    code_folding: "hide"
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+## Modern Dive
+
+Setting up packages
+
+Make sure to install the following packages if they haven't already been installed:
+1. tidyverse
+2. stats
+3. knitr
+4. nycflights13
+```{r}
+library(tidyverse)
+library(stats)
+library(knitr)
+```
+

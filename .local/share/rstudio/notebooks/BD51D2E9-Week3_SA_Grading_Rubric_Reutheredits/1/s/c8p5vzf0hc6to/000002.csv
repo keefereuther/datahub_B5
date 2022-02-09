@@ -1,0 +1,6 @@
+"0","fig4<- ggplot(data = HospitalData , aes(x= reorder(Hospital,Operations),y =Operations))+"
+"0","  geom_bar(stat=""identity"") +"
+"0","  theme_minimal()"
+"2","Error in ggplot(data = HospitalData, aes(x = reorder(Hospital, Operations),  : 
+  object 'HospitalData' not found
+"

@@ -1,0 +1,136 @@
+---
+title: "Checkpoint 2 Template"
+author: "No Name"
+date: "Today's Date"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+# Checkpoint 2 instructions
+
+In this file you will find all the instructions to complete the next checkpoint. Please complete the following:
+
+1. Examine all the feedback you got on checkpoint 1. Do you need to modify your question, prediction, or hypothesis? 
+
+2. Copy your work from checkpoint one into this document in the space provided. 
+
+3.  Take into account the peer and instructor feedback from checkpoint one and make any edits to the work you just pasted in as needed. That section will be regraded for 2 points.
+
+4.  Answer each of the questions listed below.
+
+5.  Knit your .RMD document as a pdf and submit it in two separate locations on Canvas. One is the checkpoint itself. The other is the associated peer review assignment for next week.
+
+```{r instructions2, include=FALSE}
+#In the space below, paste in all of the work you did in part 1. Copy all the code from your .rmd file starting at line 39 of that document. including the all the'\newpage' and `instructions` formatting. Once your work has been pasted into this document, take the time to make any corrections based on the peer and instructor feedback you received. This section will be worth 2 points in this assignment.
+
+```
+[Your work here]
+
+```{r instructions2, include=FALSE}
+#Answer each of the following questions in the space [Your answer here]. Any questions requiring an explanation should be no longer than 100 words unless stated otherwise.
+
+```
+
+\newpage
+
+## Overall Study Characteristics
+
+### Correlative or Manipulative:
+
+[Your answer here]
+
+[Your \<100 word justification here]
+
+### Natural or Laboratory Environment:
+
+[Your answer here]
+
+### *In vivo* or *In vitro*:
+
+[Your answer here]
+
+### What is your independent variable?
+
+[Your answer here]
+
+### What units is this variable measured in?
+
+[Your answer here]
+
+### What is your dependent variable?
+
+[Your answer here]
+
+### What units is this variable measured in?
+
+[Your answer here]
+
+### If either variable is categorical, please describe that variable's levels.
+
+[Your answer here]
+
+### What is your population of interest?
+
+[Your answer here]
+
+### What is your statistical population?
+
+[Your answer here]
+
+\newpage
+
+```{r instructions4, include=FALSE}
+
+#You will also use this page to describe your overall experimental design. It should be written in paragraph form and can be up to 500 words max. If appropriate, it should cover each of the following issues: randomization, blocking, stratification, controls (positive and/or negative), blinding.
+
+```
+
+### Describe the overall structure of your experiment.
+
+[Your answer here]
+
+### What is your experimental unit? How will they be assigned to different treatment/control groups?
+
+[Your answer here]
+
+\newpage
+
+```{r instructions5, include=FALSE}
+#On this page you will list potential confounding variables. Your list needs to between 1 and 2 variables long. 
+```
+
+### Confounding variable 1:
+
+[Your answer here]
+
+### Does your design control for it? If so, how.
+
+[Your answer here]
+
+### Confounding variable 2:
+
+[Your answer here]
+
+### Does your design control for it? If so, how.
+
+[Your answer here]
+
+
+
+\newpage
+
+```{r instructions6, include=FALSE}
+# On this page you will consider the ethical implications of your study
+```
+
+### What ethical considerations did you make when constructing your experimental design? If you are studying humans, how would you ensure informed consent? What are the benefits and costs of your study?
+
+[Answer here with a short paragraph]

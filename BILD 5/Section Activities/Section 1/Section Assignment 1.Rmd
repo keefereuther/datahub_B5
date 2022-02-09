@@ -1,0 +1,47 @@
+---
+title: "Section Assignment 1"
+author: ""
+date: ""
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+```
+
+This week, your assignment is to familiarize yourself with the Rstudio environment and successfully knit an R markdown file. You will also learn how to save these files as a PDF and upload them to Canvas to be graded. Each week during these section times, you will work in pairs or small groups to complete the tasks. 
+
+
+First, be sure the author line above (line 3) contains your full name 
+
+  (for example, my line 3 reads: 'author: "Liam Mueller" ') 
+  
+Second, change the date in line 4 to today's date
+  
+  (for example, my line 4 reads: 'date: "12/31/2021" ') 
+
+
+Second, be sure not to change anything other than your name in the author line (line 3) and the date in the date line (line 4) in lines 1-12 as it will change how the file knits and is saved. 
+
+Answer the following question by typing the appropriate code in the code box (denoted by ``` signs).
+
+
+
+Question:
+
+1. By ancient tradition (1967 or 1972 or 1978 depending on who you ask), the first line of code a programmer writes when learning to code is an attempt to print the statement: "Hello, World!". If this is your first time programming, please print the statement: "Hello, World!" on line 37. If you are coming into this class with prior programming experience, please print a statement describing your past coding experience on line 37, then see if you can help other students around you with your additional coding experience!
+
+```{r}
+
+
+```
+
+Once you are done, click the "Knit" button above(It looks like a blue ball of yarn). Save the file with your name and the week number in the file name: 
+
+  (for example: "Liam_Mueller_Section_1").  
+  
+Then upload the pdf file to canvas/gradescope under the Week 1 Section Assignment before the deadline. 
+
+And that is it for this week!

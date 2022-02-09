@@ -1,0 +1,244 @@
+---
+title: "Intro to R help"
+author: "Liam Mueller"
+date: "1/7/2022"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+In this document, as in all Rmarkdown files, the input code is in a light grey box and the console output is denoted with two hash tags "##"  
+R is a powerful mathematics tool. In its simplest form it is a calculator!
+```{r cars}
+1+1
+```
+With all sorts of calculator functions
+```{r}
+1-1
+3*3
+3/3
+3^3
+```
+
+R follows order of operations:
+```{r}
+1/3+2
+
+1/(3+2)
+```
+\newpage
+
+R is an object based language. This means that we can take things like numbers, data tables, analyses, figures and give them a name (i.e., make them an object). Why do this? It makes life simpler. Let's say there is 15 lines of code or an absurdly long number you'll have to use over and over again. Give it a name and make it an object! That way you only need to use the short name and R will know you mean the longer more complicated thing you are working with. It's also perfect if you need to make an edit later. If your object pops up 10 times in the code then you can edit the oject itself once rather than make the same edit all ten times in your code.
+
+Any combination of letters and numbers can be an object name with a few exceptions:
+
+1) An object can not start with a symbol or number
+2) An object can not be named: "T", "F" "TRUE", "FALSE"
+3) An object should not contain a mathematical operator like: "Data+" "-Object"
+4) An object should not share a name with a function. Avoid object names like: "mean", "data", or "sum"
+
+
+There are many types of objects that we use all the time in R. The three we will discuss today are scalars, vectors, and arrays.
+
+Remember, we use the <- arrow to assign values to an R object. That arrow (<-) reads as the word "gets" when we are speaking R code to other humans. Old keyboards from Bell used to have a dedicated "gets" key. If you end up coding in R a lot, you may want to remap an unused F key the same way to save time!
+
+Scalar
+```{r}
+a<-2
+a
+b<-"green"
+b
+c<-TRUE
+c
+```
+***
+Vectors:  
+When we assign a vector to an object in R, we need to tell the program to expect multiple values. We do this with the c() function. We call this concatenating, and now you can see why the function is called c().
+```{r}
+AA <- c(1,2,3,4,5,6,7,8)
+AA
+#or 
+AA <- c(1:8) #when you want an unbroken string of values, the ":" is your friend!
+AA
+```
+vectors can also contain non-numeric information
+```{r}
+BB<- c("green","red","blue","black")
+BB
+CC<-c(FALSE,FALSE,FALSE,TRUE,TRUE)
+CC
+```
+
+Just don't be tempted to combine different types of data into a single vector! It will force everything into the broadest category, character.
+```{r}
+BadVector<-c(1,2,TRUE,"green")
+str(BadVector)
+```
+
+
+Vectors are strings of information in order.
+
+We can query that order with a process called indexing. We use square brackets to call an indexed value "[#]"
+
+What is the third color in vector "BB"?
+```{r}
+BB[3]
+#This calls the third value in the vector
+```
+
+This also works backwards! Where in the vector BB is the value "blue"?
+```{r}
+which(BB=="blue")
+```
+
+Two equals signs in a row? What? Lets talk about logic in R.
+
+Is 5 equal to 7?
+```{r}
+5==7
+```
+Nope! Notice that we used two equals signs here. Keep that in mind when asking this logical. I got in the habit of asking myself, is 5 equal equal to 7 when thinking about comparing values.
+
+Is 5 not equal to 7?
+```{r}
+5!=7
+```
+Is 5 greater than 7?
+```{r}
+5>7
+5>=7
+5<7
+5<=7
+```
+
+Vector functions. We can apply functions to vectors in R.
+```{r}
+str(AA)
+sum(AA)
+mean(AA)
+length(AA)
+min(AA)
+max(AA)
+```
+
+Some of these functions apply to logical vectors as well. This is because R treats "TRUE" as a numeric value of "1" and "FALSE" as a value of "0".
+```{r}
+str(CC)
+sum(CC)
+min(CC)
+max(CC)
+mean(CC)
+length(CC)
+```
+Even vectors containing categorical data can benefit from the length and structure functions.
+```{r}
+str(BB)
+length(BB)
+```
+
+
+Logical statements and functions can be really handy in dealing with data that is too large to examine quickly in its entirety! Have a massive metabolomics data set with holes where the instrument failed to detect? Use a logical to find the location of those cells in an instant.
+
+How many values are below a threshold? Lets create a massive random data set and then count how many values are 2 or less. We would not want to do this by hand!
+
+```{r}
+BigData<-rnorm(n = 10000,mean = 5,sd = 3) 
+
+str(BigData)
+
+NumberLess2 <- BigData<=2
+str(NumberLess2)
+
+sum(NumberLess2)
+```
+Three big things happened here.  
+
+1) We simulated 10,000 random data points drawn from a normal distribution with the rnorm() function.
+
+2) We used a logical argument to create a vector containing "TRUE" and "FALSE" statements.
+
+3) We relied on the fact that "TRUE" has a numeric value of "1" and "FALSE" has a value of "0" to sum the vector containing "TRUE" and "FALSE" statements.
+
+***
+Arrays:  
+An array is a two dimensional object containing greater than one row and one column.
+
+An array is just a bunch of vectors of the same length added together.
+
+Lets make a few arrays out of random data drawn from a uniform distribution to prove the point.
+
+```{r}
+columnData1<-round(x = runif(n = 8,min = 0,max = 10),digits = 0)
+str(columnData1)
+columnData2<-round(x = runif(n = 8,min = 0,max = 10),digits = 0)
+str(columnData2)
+```
+Now lets combine these as columns with cbind() to make an array that has 8 rows and two columns:
+```{r}
+TallArray <- cbind(columnData1,columnData2)
+TallArray
+```
+We can also make is long instead of tall with the rbind() function.
+```{r}
+LongArray <- rbind(columnData1,columnData2)
+LongArray
+```
+Often however, the array you will be working with will come from an outside spreadsheet like an EXCEL file or, very commonly a comma separated values file ".csv" 
+In this class, we will use .csv files. 
+```{r,eval=F}
+Workingdata<-read.csv(file = "FileName.csv")
+```
+
+Just like vectors, arrays can be indexed. In R, rows are called before columns, so if I wanted to index the third row and second column of "TallArray"":
+```{r}
+TallArray[3,2]
+TallArray
+```
+If you want to index an entire row, leave the column index value empty.
+
+```{r}
+TallArray[3,]
+```
+If you want to index an entire column, leave the row index value empty.
+```{r}
+TallArray[,1]
+TallArray
+```
+When you do this type of indexing, you are pulling a vector out of the array.
+
+Logical arguments work on arrays as long as all the data within the array are the same type.
+```{r}
+TallArray==3
+```
+
+If we want to apply a function to an array, we need to use the apply() function to identify if we want to apply it to rows or columns. For rows, set the MARGIN to "1"
+```{r}
+apply(X = TallArray,MARGIN = 1,FUN = sum)
+```
+For columns, set the MARGIN to "2"
+```{r}
+apply(X = TallArray,MARGIN = 2,FUN = sum)
+```
+
+And remember, any of these function outputs can be saved as an object.
+
+```{r}
+RowsSums<-apply(X = TallArray,MARGIN = 1,FUN = sum)
+```
+
+And even added back to the original array.
+```{r}
+newTallArray<-cbind(TallArray,RowsSums)
+newTallArray
+```
+
+If you make an array that you want to send to someone else or save outside of R, we can use R to write a new .csv file that you can open in EXCEL or Numbers or any other spreadsheet editor. Use the write.csv() function.
+```{r,eval=F}
+write.csv(x = newTallArray,file = "Data_with_rowSums.csv")
+```
+
+
+Good luck and have fun!

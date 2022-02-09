@@ -1,0 +1,162 @@
+---
+title: "Section Assignment 5"
+author: ""
+date: ""
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+```
+
+
+
+
+
+***
+Please Read!  
+
+
+This week, your assignment is to work with the tidyverse package to rearrange and manipulate data tables. 
+
+
+Since we have already downloaded and installed the tidyverse, this week, simply load the tidyverse functions into your working library:
+```{r,echo=FALSE}
+library(tidyverse)
+```
+This line of code above will need to be run each time you start a new R session.
+
+One of the traits of a great programmer is their ability to solve a problem they haven't seen before. One of the best ways to solve a problem you have not seen before is to see if anyone else has. Great programmers are experts of web searching. Do not be afraid to find code on an online help page and run it! 
+
+
+Copying from the internet is one of the foundations of learning how to program, but it only works as learning if you reflect on why the code you used works. For that reason, this week and in future weeks, you will need to annotate your code or answer a specific question about the process. Use the lines that look like this at the end of each question to input your explanation of the code:
+```{r,eval=FALSE,echo=TRUE}
+note<-'your note here'
+print(note)
+```
+ You will be graded on not just your code, but your explanation. Remember, in this class, it is okay to copy code, but you still need to demonstrate independent thought.
+
+  ***  
+\newpage  
+
+Questions: This week we will be working with plant chemistry data. The data set is from 382 unique plants that were sampled for both their saponin and tannin concentration. We will be coming back to this data set again in future weeks, so the the work you put in this week will save you time a few weeks down the road!
+  
+Question 1. (1 point) Read in the associated .csv file for this assignment "PlantChemistry.csv". 
+```{r}
+ChemData<-
+str(ChemData)
+```
+
+What does the `str()` function tell you about the shape of the object ChemData? Answer in the space provided below.
+```{r,results='asis',echo=FALSE}
+Answer1<-""
+print(Answer1)
+```
+
+  
+\newpage  
+
+Question 2.(2 point): One of the two numeric data columns in "ChemData" is not normally distributed. Use ggplot to build a histogram to visualize the distribution of both the "saponins" and "tannins" columns. Hint: In week 3 you used the `geom_bar()` or `geom_col()` function to build your plot. This week, try `geom_histogram()`. 
+```{r}
+Hist_saponins<-
+Hist_saponins
+```
+
+\newpage  
+  
+```{r}
+Hist_tannins<-
+Hist_tannins
+```
+
+Which of the two columns of data seem more non-normal to you based on the visual test of examining the histograms?
+```{r,results='asis',echo=FALSE}
+Answer2<-""
+print(Answer2)
+```
+
+
+\newpage
+  
+Question 3. (4 points): While the "eye test" is good, lets use a statistical test to determine the probability that our data are random variables drawn from a normal distribution. While it may not be the best test for normality, perform the Kolmogorov–Smirnov test on both the saponins and tannins data. Hint: `ks.test(x=datatablename$columnname y="pnorm", mean(datatablename$columnname), sd(datatablename$columnname))`.
+```{r}
+#saponins
+ks.test()
+```
+Interpret the results for the ks.test you performed on the saponins data. Your answer should include what the null and alternate hypothesis for the test are and whether you choose to reject the null hypothesis or not.
+```{r,results='asis',echo=FALSE}
+Answer3_1<-""
+print(Answer3_1)
+```
+
+
+```{r}
+#tannins
+ks.test()
+```
+Interpret the results for the ks.test you performed on the tannins data. Your answer should include what the null and alternate hypothesis for the test are and whether you choose to reject the null hypothesis or not.
+```{r,results='asis',echo=FALSE}
+Answer3_2<-""
+print(Answer3_2)
+```
+
+
+\newpage  
+
+Question 4 (1 point): By now, you have identified that one of the columns of data in ChemData is not normally distributed. Using the tidyverse, we can easily create a new column in our data set that contains log transformed data of the column that we identified is non-normal. Hint: Check out the "Manipulate Variables" column on the dplyr cheat-sheet from last week, specifically the `mutate()` function.
+
+
+```{r}
+ChemData_with_log<-
+str(ChemData_with_log)
+```
+
+Add your notes for Q4 below, explain which column you chose to mutate and what the mutate function has done:
+```{r,results='asis',echo=FALSE}
+note4<-""
+print(note4)
+```
+
+\newpage  
+
+Question 5 (1 point): Lets test and see if the data transformation has worked. In this question we will use a histogram to determine if our transformed data meet the assumptions of a normal distribution. 
+
+```{r}
+#Histogram of the transformed data:
+Hist_Transformed<-
+Hist_Transformed
+```
+Do the transformed data appear normally distributed? Compare to the appropriate histogram you made in question 2.
+```{r,results='asis',echo=FALSE}
+Answer5_1<-""
+print(Answer5_1)
+```
+
+\newpage
+  
+Question 6 (1 point): Lets test and see if the data transformation has worked. In this question we will use  a Kolmogorov–Smirnov test to determine if our transformed data meet the assumptions of a normal distribution. 
+
+```{r}
+#Kolmogorov–Smirnov test on the transformed data
+ks.test()
+```
+Interpret the results for the ks.test you performed on the transformed data. Your answer should include what the null and alternate hypothesis for the test are and whether you choose to reject the null hypothesis or not.
+```{r,results='asis',echo=FALSE}
+Answer6<-""
+print(Answer6) 
+```
+
+
+
+\newpage  
+
+Once you are done, click the "Knit" button above(It looks like a blue ball of yarn). Save the file with your name and the week number in the file name: 
+
+  (for example: "Liam_Mueller_Section_5").  
+  
+Then upload the pdf file to canvas/gradescope under the Week 5 Section Assignment before the deadline. 
+
+And that is it for this week!

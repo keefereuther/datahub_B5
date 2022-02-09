@@ -1,0 +1,7 @@
+pid,seed,username,mailto,ind_var_type,ind_num_low,ind_num_mid,ind_num_high,relationship,levels,dep_var_type,bi_prop,dep_num_low,dep_num_mid,dep_num_high,samplesize
+11111111,33333333,kdreuther,apocrita@gmail.com,cat,NA,NA,NA,NA,2,bi,0.5,NA,NA,NA,100
+11111112,33333336,kdreuther1,a.pocrita@gmail.com,cat,NA,NA,NA,NA,2,count,NA,0,50,1000,100
+11111113,33333339,kdreuther3,ap.ocrita@gmail.com,cat,NA,NA,NA,NA,3,num,NA,0,NA,100,100
+11111114,33333342,kdreuther4,apo.crita@gmail.com,num,10,90,300,pos,NA,bi,0.6,NA,NA,NA,200
+11111115,33333345,kdreuther5,apoc.rita@gmail.com,num,0,27,150,neg,NA,num,NA,5,37,100,200
+11111117,33333351,kdreuther7,apocr.ita@gmail.com,num,0,15,50,NA,NA,bi,0.4,NA,NA,NA,100

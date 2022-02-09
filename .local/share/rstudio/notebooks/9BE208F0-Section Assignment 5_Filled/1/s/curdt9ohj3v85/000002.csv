@@ -1,0 +1,6 @@
+"0","Hist_saponins<-ggplot(data = ChemData,mapping = aes(x = saponins))+"
+"0","  geom_histogram()"
+"0","  "
+"0","Hist_saponins"
+"2","`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+"

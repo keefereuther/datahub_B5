@@ -1,0 +1,4 @@
+"0","flights<-read.csv(""flights.csv"")"
+"0",""
+"0","weather<-read.csv(""JFKWeather.csv"")"
+"0",""

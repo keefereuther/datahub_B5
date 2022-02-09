@@ -1,0 +1,4 @@
+"0","fig1<- ggplot(data = HospitalData , aes(x= Hospital,y =Operations))"
+"2","Error in ggplot(data = HospitalData, aes(x = Hospital, y = Operations)) : 
+  object 'HospitalData' not found
+"

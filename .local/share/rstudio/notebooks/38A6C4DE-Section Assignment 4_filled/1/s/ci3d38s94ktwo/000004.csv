@@ -1,0 +1,2 @@
+"0","SmallerCities<-filter(GoodTable,Population<1500000)"
+"0","head(SmallerCities)"

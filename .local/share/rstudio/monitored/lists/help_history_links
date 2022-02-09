@@ -1,0 +1,15 @@
+help/library/stats/html/Hypergeometric.html,R: The Hypergeometric Distribution
+help/library/skimr/html/00Index.html,R: Compact and Flexible Summaries of Data
+help/library/stats/html/Binomial.html,R: The Binomial Distribution
+help/library/Rmisc/html/00Index.html,R: Rmisc: Ryan Miscellaneous
+help/library/Rmisc/html/STDERR.html,R: Standard Error
+help/library/tidyr/html/pivot_longer.html,R: Pivot data from wide to long
+help/library/stats/html/ks.test.html,R: Kolmogorov-Smirnov Tests
+help/library/Rmisc/html/summarySE.html,R: Summarizes data
+help/library/NULL/help/summarize,summarize
+help/library/plyr/html/summarise.html,R: Summarise a data frame.
+help/library/NULL/help/summarise,summarise
+help/library/dplyr/html/summarise.html,R: Summarise each group to fewer rows
+help/doc/html/Search?objects=1&port=8787,R: Search Results
+help/library/Rmisc/html/CI.html,R: Confidence Interval
+help/library/dplyr/html/filter_all.html,R: Filter within a selection of variables

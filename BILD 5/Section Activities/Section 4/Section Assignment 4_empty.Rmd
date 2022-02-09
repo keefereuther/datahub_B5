@@ -1,0 +1,146 @@
+---
+title: "Section Assignment 4"
+author: ""
+date: ""
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+```
+
+
+
+
+
+***
+Please Read!  
+
+
+This week, your assignment is to work with the tidyverse package to rearrange and manipulate data tables. Just like last week the first thing we need to do is install tidyverse:
+```{r,echo=TRUE,eval=FALSE}
+install.packages("tidyverse")
+```
+But that line only needs to be run once! Now load the tidyverse functions into your working library:
+```{r,echo=FALSE}
+library(tidyverse)
+```
+This line of code above will need to be run each time you start a new R session.
+
+Just like last week, one of the traits of a great programmer is their ability to solve a problem they haven't seen before. One of the best ways to solve a problem you have not seen before is to see if anyone else has. Great programmers are experts of web searching. As we are working on becoming expert programmers, this week I have included the link to a set of Rstudio cheat sheets all about the different functionalities in the tidyverse. The two most helpful for this week's assignment are the sheets on dplyr and tidyr. https://www.rstudio.com/resources/cheatsheets/
+
+
+Copying from the internet is one of the foundations of learning how to program, but it only works as learning if you reflect on why the code you used works. For that reason, this week and in future weeks, you will need to annotate your code. Use the lines that look like this at the end of each question to input your explanation of the code:
+```{r,eval=FALSE,echo=TRUE}
+note<-'your note here'
+print(note)
+```
+ You will be graded on not just your tables, but your explanation. Remember, in this class, it is okay to copy code, but you still need to demonstrate independent thought.
+
+  ***  
+\newpage  
+
+Questions:
+  
+Question 1. (1 point) The following data table (BadTable) is an untidy display of the population estimate for two different years in three large Texas cities. Use the `pivot_longer()` function to assign to the GoodTable object a table with 3 columns and 6 rows. Hint, `names_to = "Year"` and `values_to = "population"`. For more hints look at the tidyr cheat sheet under "Reshape Data".
+
+```{r}
+BadTable<-read_csv(file= "City,2014,2019
+                        San Antonio,1436697,1547253
+                        Houston,2239558,2320268
+                        Austin,912791,978908")
+
+GoodTable<-
+
+head(GoodTable)
+```
+Add your notes for Q1 below, remember the text you type has to be in the quotation marks!:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+  
+\newpage  
+
+Question 2.(1 point): Extract the rows from "GoodTable" where population is less than 1500000. Hint: Page 1 of the dplyr cheat sheet, "Manipulate Cases"
+```{r}
+SmallerCities<-
+head(SmallerCities)
+```
+Add your notes for Q2 below, remember the text you type has to be in the quotation marks!:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+
+\newpage
+  
+Question 3. (1 point): Rearrange "GoodTable" by high to low population. Hint: Page 1 of the dplyr cheat sheet, "Manipulate Cases"
+```{r}
+OrderedGoodTable<-
+head(OrderedGoodTable)
+```
+Add your notes for Q3 below, remember the text you type has to be in the quotation marks!:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+
+\newpage  
+
+Question 4 (1 point): To really get a feel for the tidyverse, we need to start working with bigger data sets. The following two data tables are subsets from the flights and weather data in the "nycflights2013" package. Download The "flights.csv" and "JFKWeather.csv" files from this week's section activity on Canvas. "flights.csv" contains flight information for the 28 Hawaiian Airlines flights that departed JFK airport in February 2013. The "JFKWeather.csv" contains hourly weather data from JFK airports for the month of February 2013. Read these .csv files into R below:
+
+
+```{r}
+flights<-
+
+weather<-
+
+```
+
+Add your notes for Q4 below, remember the text you type has to be in the quotation marks!:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+
+Question 5 (3 points): Our goal is to combine the flight and weather data tables into one large table containing the flight information and the weather data captured the hour each flight was scheduled to take off. If you do this correctly, the resulting table should have exactly 28 rows and 23 columns. Hint: `inner_join()` on page 2 of the dplyr cheat sheet and the sections titled "RELATIONAL DATA" and "COLUMN MATCHING FOR JOINS". Hint 2: Both of these data tables share the "time_hour" column. 
+
+```{r}
+CombinedTable<-
+str(CombinedTable)
+```
+
+Add your notes for Q5 below, remember the text you type has to be in the quotation marks!:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+Question 6 (3 points): Let's say, instead of the weather at the time of the flight, we want to know the average temperature each day in February 2013, at JFK. You will need to combine the `summarise()` and `group_by()` functions with the "weather" data you created back in question 4 to achieve a data table with 28 rows and two columns (day and average temp). Hint: Look at the left column on the first page of the dplyr cheat sheet. Hint 2: Your answer will use "%>%" twice. These are called pipes and allow you to perform sequential operations within a single command. Essentially, "%>%" acts like "and then do". For example: "A %>% B %>% C" really means "take A and then do B to it and then do C to it". 
+
+```{r}
+MeanDailyTemp<- 
+  
+str(MeanDailyTemp)
+```
+
+
+\newpage  
+
+Once you are done, click the "Knit" button above(It looks like a blue ball of yarn). Save the file with your name and the week number in the file name: 
+
+  (for example: "Liam_Mueller_Section_4").  
+  
+Then upload the pdf file to canvas/gradescope under the Week 4 Section Assignment before the deadline. 
+
+And that is it for this week!

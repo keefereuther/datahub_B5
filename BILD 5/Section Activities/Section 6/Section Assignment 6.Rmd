@@ -1,0 +1,180 @@
+---
+title: "Section Assignment 6"
+author: ""
+date: ""
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+```
+
+
+
+
+
+***
+Please Read!  
+
+
+This week, your assignment is a series of review problems derived from past weeks. Use this week's assignment as an opportunity to cement what you have learned so far, before we jump into more complex topics next week! 
+
+
+Since we have already downloaded and installed the tidyverse, this week, simply load the tidyverse functions into your working library:
+```{r,echo=FALSE}
+library(tidyverse)
+```
+This line of code above will need to be run each time you start a new R session.
+
+One of the traits of a great programmer is their ability to solve a problem they haven't seen before. One of the best ways to solve a problem you have not seen before is to see if anyone else has. Great programmers are experts of web searching. Do not be afraid to find code on an online help page and run it! 
+
+Copying from the internet is one of the foundations of learning how to program, but it only works as learning if you reflect on why the code you used works. For that reason, this week and in future weeks, you will need to annotate your code or answer a specific question about the process. Use the lines that look like this at the end of each question to input your explanation of the code:
+```{r,eval=FALSE,echo=TRUE}
+note<-'your note here'
+print(note)
+```
+ You will be graded on not just your code, but your explanation. Remember, in this class, it is okay to copy code, but you still need to demonstrate independent thought.
+
+  ***  
+\newpage  
+
+
+Question 1 (0.5 point): Read in this week's data set "Week6SoilData.csv". These data represent inorganic soil nitrogen (NO3-) concentrations from 500 gardens collected in both 2018 and 2021. The nitrogen concentration was determined by combustion analysis and is presented as a proportion of total nitrogen (from 0 to 1). 
+```{r}
+W6Data<-
+head(W6Data)
+
+```
+
+Is this data set tidy? Why or why not?
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+
+\newpage  
+
+
+Question 2 (0.5 point): How many gardens in 2018 had more than 20% of their total nitrogen in inorganic nitrogen? 
+```{r}
+High_Inorganic_N<-
+High_Inorganic_N
+```
+
+There are many ways to answer this question. Explain how your code counts how many gardens had high inorganic nitrogen in 2018
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+
+
+Question 3 (1 point): Convert the 'W6Data' table into a tidy table. Hint:`names_to = "Year",values_to = "InorganicN"`
+```{r}
+GardenData<-
+str(GardenData)
+```
+Is this new data set tidy? Why or why not?
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+
+
+Question 4 (2 points): Is the Inorganic Nitrogen data normally distributed? Use both a histogram and the ks.test() to support your answer.
+```{r}
+Histogram1<-
+Histogram1
+```
+```{r}
+ks.test()
+```
+Is the Inorganic Nitrogen data normally distributed? Explain in the note below:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+
+\newpage  
+
+
+Question 5 (1 point): Use the `mutate()` function to create a data column that is transformed InorganicN data. Hint: Try a square root transformation this time.
+```{r}
+T_Garden_Data<-
+str(T_Garden_Data)
+```
+
+Explain what the mutate function is doing in this case.
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+
+Question 6 (2 points): Is the transformed Inorganic Nitrogen data normally distributed? Use both a histogram and the ks.test() to support your answer.
+
+```{r}
+Histogram2<-
+Histogram2
+```
+```{r}
+ks.test()
+```
+Is the transformed Inorganic Nitrogen data normally distributed? Explain in the note below:
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+
+
+Question 7 (1 point): Use ggplot to create a boxplot of the two years of transformed nitrogen data. Do your best to get your graph to look like the example given in the Canvas assignment. Hint 1: `geom_boxplot` Hint 2: If your plot is not looking like the example, go back to your week 3 section assignment and look at how we changed axis labels and the theme.
+```{r}
+Boxplot1<-
+Boxplot1
+```
+
+Explain how each line in your ggplot code is modifying the plot. Hint: Your code should have used 4 lines to generate a plot similar to the example given on Canvas.
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+\newpage  
+
+
+Question 8 (2 points): Calculate the overall mean and 95% confidence interval for the inorganic N proportion in all gardens measured in both 2018 and 2021. Report your answers in the original units. Hint 1: The mean only means what we think the mean means when the data are normal! Hint 2: The back transformation of a square root transformation is x^2.
+```{r}
+upperCI<-
+meanN<-
+lowerCI<-
+
+cbind(upperCI,meanN,lowerCI)
+```
+
+Explain how you estimated the mean and confidence intervals of the garden soil data.
+```{r,results='asis',echo=FALSE}
+note<-""
+print(note)
+```
+
+
+\newpage  
+
+Once you are done, click the "Knit" button above(It looks like a blue ball of yarn). Save the pdf file with your name and the week number in the file name: 
+
+  (for example: "Liam_Mueller_Section_6.pdf").  
+  
+Then upload this pdf file to canvas/gradescope under the Week 6 Section Assignment before the deadline. 
+
+You are now more than half way done, look how much programming you have learned in this short time! Congratulations, and keep up the good work. 

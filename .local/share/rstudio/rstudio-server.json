@@ -1,0 +1,17 @@
+{
+    "context_id": "FF435D78",
+    "theme": {
+        "name": "Xcode",
+        "url": "theme/default/xcode.rstheme",
+        "isDark": false
+    },
+    "export_plot_options": {
+        "width": 400,
+        "height": 255,
+        "format": "PNG",
+        "keepRatio": true,
+        "viewAfterSave": false,
+        "copyAsMetafile": false
+    },
+    "visual_mode_confirmed": true
+}

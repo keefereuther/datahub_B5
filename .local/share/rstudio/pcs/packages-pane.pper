@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "/home/kdreuther/R/x86_64-conda-linux-gnu-library/4.1",
+        "installDependencies": true
+    }
+}
